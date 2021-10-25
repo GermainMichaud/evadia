@@ -24,13 +24,13 @@ jobs:
         USERNAME: ${{ secrets.USERNAME }}
         KEY: ${{ secrets.KEY }}
         script: |
-          cd ~/on-demenage
+          cd ~/evadia
           git pull
-          cd ~/on-demenage/front
+          cd ~/evadia/front
           npm install && npm run build
-          cp -r ~/on-demenage/front/dist/* /var/www/on-demenage/
-          cp -r ~/on-demenage/back/* ~/api/
-          cd ~/api/
+          cp -r ~/evadia/front/dist/* /var/www/evadia/
+          cp -r ~/evadia/back/* ~/evadia-api/
+          cd ~/evadia-api/
           npm install
           pm2 reload API
           echo 'Deployed successfully to Digital Ocean server'
