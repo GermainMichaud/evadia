@@ -6,8 +6,9 @@
   "scripts": {
     "start": "node index",
     "dev": "nodemon index",
-    "lint": "eslint . --quiet --fix --cache",
-    "prepare": "cd .. && husky install back/.husky"
+    "lint": "eslint \"**/*.js\" --quiet --fix --cache",
+    "prepare": "cd .. && husky install back/.husky",
+    "test": "jest --watch --verbose"
   },
   "author": "",
   "license": "ISC",
@@ -18,7 +19,23 @@
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-prettier": "^4.0.0",
     "husky": "^7.0.2",
+    "jest": "^27.2.4",
+    "node-fetch": "^3.0.0",
     "nodemon": "^2.0.12",
-    "prettier": "^2.4.1"
+    "prettier": "^2.4.1",
+    "stream-json": "^1.7.3",
+    "supertest": "^6.1.6"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "joi": "^17.4.2",
+    "jsonwebtoken": "^8.5.1",
+    "nodemailer": "^6.6.5",
+    "pg": "^8.7.1",
+    "redis": "^3.1.2",
+    "sanitizer": "^0.1.3"
   }
 }

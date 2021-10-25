@@ -1,0 +1,53 @@
+@host=http://localhost:3500
+
+
+### CRITERIA
+POST {{host}}/api/search/criteria HTTP/1.1
+Content-Type: application/json
+Content-Length: 141
+
+	{
+		"populationmin": "4800",
+		"populationmax": "15000",
+		"type_ecole": "Lycée"
+	}
+
+### RANDOM
+GET {{host}}/api/search/random HTTP/1.1
+
+###
+
+GET {{host}}/api/search/city?ville=354
+
+###
+GET {{host}}/api/search/random
+
+###
+POST {{host}}/api/search/city/54318/check?boolean=false
+
+### Get all messages
+GET {{host}}/api/messages?offset=5&limit=15
+
+### Get a message
+GET {{host}}/api/messages/15
+
+### Send contact message
+POST {{host}}/api/messages
+Content-Type: application/json
+
+{
+	"name": "TestName",
+	"email": "test@test.com",
+	"subject": "Sujet du message",
+	"message": "Message Test"
+}
+
+### Update a message
+PATCH {{host}}/api/messages/3
+Content-Type: "application/json"
+
+### Delete a message
+DELETE {{host}}/api/messages/10
+
+###
+GET {{host}}/api/user/bookmarks
